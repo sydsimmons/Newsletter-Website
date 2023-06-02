@@ -16,7 +16,9 @@
                      ..........{ Sydney Simmons }..........
  ******************************************************************************* -->
  
-    
+ <?php 
+            $Newsletters = $Newsletters ?? '';
+ ?>
 
 <!DOCTYPE html>              <!-- this is a declaration used in HTML 5. It tells the browsers that this is HTML 5 -->
 
@@ -49,63 +51,63 @@
         <tr> 
           <td style="width: 5%; text-align: right;">EA ID &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="EAID" value="<?php echo $EAID ?>" style="width: 100%;">
+            <input type="text" name="EAID" value="<?php echo $EAID ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- second row -->
         <tr> 
           <td style="width: 5%; text-align: right;">Email &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="Email" value="<?php echo $Email ?>" style="width: 100%;">
+            <input type="text" name="Email" value="<?php echo $Email ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- third row -->
         <tr> 
           <td style="width: 5%; text-align: right;">First Name &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="FirstName" value="<?php echo $FirstName ?>" style="width: 100%;">
+            <input type="text" name="FirstName" value="<?php echo $FirstName ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- fourth row -->
         <tr> 
           <td style="width: 5%; text-align: right;">Last Name &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="LastName" value="<?php echo $LastName ?>" style="width: 100%;">
+            <input type="text" name="LastName" value="<?php echo $LastName ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- fifth row -->
         <tr> 
           <td style="width: 5%; text-align: right;">Street Address &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="StreetAddress" value="<?php echo $StreetAddress ?>" style="width: 100%;">
+            <input type="text" name="StreetAddress" value="<?php echo $StreetAddress ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- sixth row -->
         <tr> 
           <td style="width: 5%; text-align: right;">City &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="City" value="<?php echo $City ?>" style="width: 100%;">
+            <input type="text" name="City" value="<?php echo $City ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- seventh row -->
         <tr> 
           <td style="width: 5%; text-align: right;">State &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="State" value="<?php echo $State ?>" style="width: 100%;">
+            <input type="text" name="State" value="<?php echo $State ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- eigth row -->
         <tr> 
           <td style="width: 5%; text-align: right;">Zip Code &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="ZipCode" value="<?php echo $ZipCode ?>" style="width: 100%;">
+            <input type="text" name="ZipCode" value="<?php echo $ZipCode ?? ''; ?>" style="width: 100%;">
           </td>
         </tr> 
         <!-- ninth row -->
         <tr> 
           <td style="width: 5%; text-align: right;">Date &nbsp;</td> 
           <td style="width: 20%;"> 
-            <input type="text" name="Date" value="<?php echo $Date ?>" style="width: 100%;">
+            <input type="text" name="Date" value="<?php echo $Date ?? ''; ?>" style="width: 100%;">
           </td> 
         </tr>  
 
@@ -118,7 +120,7 @@
         <tr>  
           <td style="width: 5%; text-align: right;">Comments &nbsp;</td>
           <td style="width: 20%;"> 
-            <textarea name="Comments" rows="5" cols="20"><?php echo $Comments ?></textarea> 
+            <textarea name="Comments" rows="5" cols="20"><?php echo $Comments ?? ''; ?></textarea> 
           </td>
         </tr> 
       
@@ -131,10 +133,11 @@
         <tr> 
           <td style="width: 12%; text-align: right;">Newsletter &nbsp;</td> 
           <td style="width: 20%; text-align: right;"> 
+         
             <select name="Newsletters" style="width: 100%" size="1";>
-              <option value="TS4 Lastest News" <?php if ($Newsletters == "TS4 Lastest News") echo selected ?> > TS4 Lastest News</option> 
-              <option value="TS4 Patch Note Expert" <?php if ($Newsletters == "TS4 Patch Note Expert") echo selected ?>> TS4 Patch Note Expert</option> 
-              <option value="TS4 Best Mods" <?php if ($Newsletters == "TS4 Best Mods") echo selected ?>> TS4 Best Mods</option> 
+              <option value="TS4 Lastest News" <?php if ($Newsletters == "TS4 Lastest News") echo 'selected'; ?> > TS4 Lastest News</option> 
+              <option value="TS4 Patch Note Expert" <?php if ($Newsletters == "TS4 Patch Note Expert") echo 'selected'; ?>> TS4 Patch Note Expert</option> 
+              <option value="TS4 Best Mods" <?php if ($Newsletters == "TS4 Best Mods") echo 'selected'; ?>> TS4 Best Mods</option> 
             </select>
           </td>
         </tr> 
@@ -165,10 +168,10 @@
           <td style="width: 20%; text-align: left;"> 
             <table style="margin: 0px auto;">
               <tr> 
-                <td style="width: 10%;"><input type="checkbox" name="PC" <?php if ($PC == "PC") echo checked;?> value="PC">PC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-                <td style="width: 10%;"><input type="checkbox" name="Xbox" <?php if ($Xbox == "Xbox") echo checked;?> value="Xbox">Xbox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td style="width: 10%;"><input type="checkbox" name="PlayStation" <?php if ($PlayStation == "PlayStation") echo checked;?> value="PlayStation">PlayStation</td>  
-                <td style="width: 12%;"><input type="checkbox" name="Mobile" <?php if ($Mobile == "Mobile") echo checked;?> value="Mobile">Mobile</td>
+                <td style="width: 10%;"><input type="checkbox" name="PC" <?php if ($PC == "PC") echo 'checked';?> value="PC">PC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+                <td style="width: 10%;"><input type="checkbox" name="Xbox" <?php if ($Xbox == "Xbox") echo 'checked';?> value="Xbox">Xbox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td style="width: 10%;"><input type="checkbox" name="PlayStation" <?php if ($PlayStation == "PlayStation") echo 'checked';?> value="PlayStation">PlayStation</td>  
+                <td style="width: 12%;"><input type="checkbox" name="Mobile" <?php if ($Mobile == "Mobile") echo 'checked';?> value="Mobile">Mobile</td>
               </tr> 
             </table>
           </td> 
